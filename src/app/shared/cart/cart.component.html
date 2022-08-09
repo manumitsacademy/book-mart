@@ -1,0 +1,18 @@
+<div class="cart">
+    <div class="empty-cart d-flex flex-column align-items-center" *ngIf="!cartItems.length">
+        <h1 class="text-large text-theme mb-50">Oops</h1>
+        <img class="cart-empty-img" src="assets/cart-empty.svg">
+        <h1 class="mt-4">No items in your cart</h1>
+        <h3>Add items to continue shopping</h3>
+        <button class="btn-theme w-25 mt-4" routerLink="/home">Shop now</button>
+    </div>
+    <div class="cart-content d-flex justify-content-between p-5" *ngIf="cartItems.length">
+        <div class="items-container me-5">
+            <app-cart-item [item]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-item>
+        </div>
+        <div>
+            <app-price-details></app-price-details>
+            <button class="btn-theme btn-checkout">Checkout</button>
+        </div>
+    </div>
+</div>

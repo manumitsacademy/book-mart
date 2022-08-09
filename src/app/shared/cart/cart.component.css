@@ -1,0 +1,47 @@
+.cart{
+    margin: 0 75px;
+}
+.empty-cart{
+    margin-top: 50px;
+}
+
+.text-large{
+    font-size: 80px;
+}
+
+.text-theme{
+    color:rgb(255, 102, 0);
+}
+
+.cart-empty-img{
+    width: 200px;
+}
+
+.mb-50{
+    margin-bottom: 50px;
+}
+
+.items-container{
+    max-width: 890px;
+}
+
+.btn-theme{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: white;
+    background-color: rgb(255, 102, 0);
+    border-color: rgb(255, 102, 0);
+}
+
+.btn-checkout{
+    position: fixed;
+    right: 125px;
+    top: 350px;
+    width: 350px;
+}
+
+
+
+
+

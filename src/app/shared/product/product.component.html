@@ -1,0 +1,11 @@
+<div class="book-card p-1 d-flex flex-column justify-content-between">
+    <div class="d-flex justify-content-center">
+        <a routerLink="product-details" [queryParams]="id"><img class="book-thumbnail" [src]="book.thumbnailUrl" [title]="book.shortDescription"></a>
+    </div>
+    <div class="card-content">
+        <h4 class="text-truncate">{{book.title}}</h4>
+        <p class="text-secondary text-truncate">{{book.categories}}</p>
+        <button class="btn-theme w-100" (click)="addToCart(book)" *ngIf="!isProductInCart">Add To Cart</button>
+        <button class="btn-theme w-100" routerLink="/cart" *ngIf="isProductInCart">Go to cart</button>
+    </div>
+</div>

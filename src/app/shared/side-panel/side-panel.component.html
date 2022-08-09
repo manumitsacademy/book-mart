@@ -1,0 +1,32 @@
+<div class="side-panel">
+    <div class="panel-heading">
+        <span>Filters</span>
+    </div>
+    <div class="filter-category d-flex justify-content-between" (click)="showCategories()">
+        <span>Categories</span>
+        <img src="/assets/caret-right-fill.svg">
+    </div>
+    <div class="dropdown-container" *ngIf="isCategoriesVisible">     
+        <div class="dropdown-list category-list row">
+            <span class="dropdown-list-item col-4" *ngFor="let category of categories" (click)="filterBooksByCategory(category)">{{category}}</span>
+        </div>
+    </div>
+    <div class="filter-category d-flex justify-content-between" (click)="showPriceFilters()">
+        <span>Price</span>
+        <img src="/assets/caret-right-fill.svg">
+    </div>
+    <div class="dropdown-container" *ngIf="isPriceFiltersVisible">   
+        <div class="dropdown-list price-filter-list row">
+            <span class="dropdown-list-item" *ngFor="let priceFilter of priceFilters" (click)="filterBooksByPrice(priceFilter)">Upto ₹{{priceFilter}}</span>
+        </div>
+    </div>
+    <div class="filter-category d-flex justify-content-between" (click)="showDiscountFilters()">
+        <span>Discount</span>
+        <img src="/assets/caret-right-fill.svg">
+    </div>
+    <div class="dropdown-container" *ngIf="isDiscountFiltersVisible">   
+        <div class="dropdown-list price-filter-list row">
+            <span class="dropdown-list-item" *ngFor="let discountFilter of discountFilters" (click)="filterBooksByDiscount(discountFilter)">More than {{discountFilter}}%</span>
+        </div>
+    </div>
+</div>

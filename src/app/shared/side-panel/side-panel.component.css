@@ -1,0 +1,53 @@
+.side-panel{
+    width: 300px;
+    height: 650px;
+    border: 1px solid #a83000;
+    background-color:#a83000;
+}
+
+.panel-heading{
+    padding: 10px 20px;
+    color: #FFE6C6;
+    font-size: 26px;
+    border-bottom: 1px solid #FFE6C6;
+}
+
+.filter-category{
+    padding: 8px 15px;
+    color: #FFE6C6;
+    font-size: 18px;
+    border-bottom: 1px solid #FFE6C6;
+    cursor: pointer;
+}
+
+.dropdown-container{
+    position: relative;
+}
+
+.dropdown-list{
+    border: 1px solid #FFE6C6;
+    background-color:#FFE6C6;
+    box-shadow:10px 10px 25px rgb(54, 54, 54);
+    position: absolute;
+    left: 312px; 
+    top: -60px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.category-list{    
+    width: 800px;
+}
+
+.price-filter-list{
+    width: fit-content;
+}
+
+.dropdown-list-item{
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.dropdown-list-item:hover{
+    color: rgb(255, 102, 0);
+}

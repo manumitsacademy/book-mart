@@ -1,0 +1,20 @@
+<div class="price-details p-4">
+    <div class="text-secondary"><span>PRICE DETAILS</span></div>
+    <div class="d-flex justify-content-between">
+        <span>Price({{cartItems.length}} <span *ngIf="cartItems.length===1">item</span><span *ngIf="cartItems.length>1">items</span>)</span>
+        <span class="fw-bold">{{cartItemsPrice | currency:'INR'}}</span>
+    </div>
+    <div class="d-flex justify-content-between">
+        <span>Discount</span>
+        <span class="text-success fw-bold">-{{cartItemsDiscount | currency:'INR'}}</span>
+    </div>
+    <div class="d-flex justify-content-between">
+        <span>Delivery Charges</span>
+        <span class="text-success fw-bold" *ngIf="!deliveryCharge">FREE</span>
+        <span class="fw-bold" *ngIf="deliveryCharge">{{deliveryCharge}}</span>
+    </div>
+    <div class="d-flex justify-content-between mt-3 total-amount">
+        <h5>Total Amount</h5>
+        <h5>{{cartItemsPrice-cartItemsDiscount+deliveryCharge | currency:'INR'}}</h5>
+    </div>
+</div>

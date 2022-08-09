@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="product-details-container d-flex">
+        <div class="left-container">
+            <div class="product-image mb-4">
+                <img class="w-300" [src]="currentProduct.thumbnailUrl">
+            </div>
+            <div class="product-actions d-flex justify-content-center">
+                <button class="w-100 btn-theme" (click)="addToCart(currentProduct)" *ngIf="!isProductInCart">Add to cart</button>
+                <button class="w-100 btn-theme" *ngIf="isProductInCart" routerLink="/cart">Go to cart</button>
+                <button class="w-100 ms-3 btn-theme">Buy now</button>
+            </div>
+        </div>
+        <div class="right-container ms-5">
+            <div class="product-details">
+                <h3>{{currentProduct.title}}</h3>
+                <h2>{{discountedPrice | currency:'INR'}}</h2>
+                <span><s>{{currentProduct.price | currency:'INR'}}</s></span>
+                <span class="ms-3 text-success">{{currentProduct.discount}}% off</span>
+                <p class="mt-3">Authors: {{currentProduct.authors}}</p>
+                <p class="mt-3">{{currentProduct.shortDescription}}</p>
+                <div class="description mt-3">
+                    <h3>Product Description</h3>
+                    <ul>
+                        <li>{{currentProduct.isbn}}</li>
+                        <li>{{currentProduct.isbn}}</li>
+                        <li>{{currentProduct.isbn}}</li>
+                        <li>{{currentProduct.isbn}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

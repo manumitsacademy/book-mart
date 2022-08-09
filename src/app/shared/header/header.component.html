@@ -1,0 +1,28 @@
+<div class="header d-flex align-items-center">
+    <a routerLink="/home"><img class="main-logo" src="assets/book-mart-logo-1.png"></a>    
+    <form #searchBox="ngForm">
+        <div class="header-search d-flex align-items-center">
+            <input class="search-box" type="text" [(ngModel)]="searchText" name="searchText" placeholder="Search for books" (keyup)="searchBook(searchText)">
+            <img class="search-logo" src="assets/search.svg">
+        </div>
+    </form>        
+    <!-- <button class="btn-theme" (click)="showCategories()">Categories</button>
+    <div class="dropdown-container" *ngIf="isCategoriesVisible">     
+        <div class="dropdown-list row">
+            <span class="dropdown-list-item col-4" *ngFor="let category of categories" (click)="filterBooks(category)">{{category}}</span>
+        </div>
+    </div> -->
+    <button class="btn-theme ms-4" (click)="showSortMenu()">Sort</button>
+    <div class="dropdown-container" *ngIf="isSortMenuVisible">     
+        <div class="dropdown-list row w-250">
+            <span class="dropdown-list-item" *ngFor="let criterion of criteria" (click)="sortBooks(criterion)">{{criterion}}</span>
+        </div>
+    </div>
+    <div class="head-right-item">
+        <div class="cart" routerLink="cart">
+            <img class="cart-image" src="assets/cart.svg">
+            <div class="cart-items" *ngIf="cartItemCount">{{cartItemCount}}</div>
+        </div>
+        <button class="btn-theme">Login</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="book-card p-4 d-flex justify-content-start">
+    <div class="left-container">
+        <div class="d-flex justify-content-center">
+            <a routerLink="/product-details" [queryParams]="item"><img class="book-thumbnail" [src]="item.thumbnailUrl" [title]="item.shortDescription"></a>
+        </div>
+        <div class="counter mt-5 d-flex justify-content-center">
+            <button class="btn-theme d-flex align-items-center" (click)="decItemCount(item)" [class.disabled]="item.count===1" [disabled]="item.count===1"  ><img class="action-icon" src="/assets/decr.svg"></button>
+            <div class="w-50 text-center">{{item.count}}</div>
+            <button class="btn-theme rounded d-flex align-items-center" (click)="incItemCount(item)"><img class="action-icon" src="/assets/incr.svg"></button>
+        </div>
+    </div>
+    <div class="right-container ms-5 d-flex flex-column">
+        <h2>{{item.title}}</h2>        
+        <div>
+            <h3 class="d-inline-block">{{discountedPrice | currency:'INR'}}</h3>
+            
+            <span class="ms-2"><s class="text-secondary">{{itemPrice | currency:'INR'}}</s></span>
+            <span class="ms-2 text-success">{{item.discount}}% Off</span>
+        </div>
+        <button class="btn-theme w-fit mt-auto" (click)="removeItem(item)">Remove</button>
+    </div>
+</div>
+
