@@ -7,13 +7,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BooksService {
-  baseUrl="http://localhost:3000/books";
+  baseUrl = "/assets/db.json";
   books:any=[];
   searchText:any = '';
   searchSubject = new Subject();
   filteredBooks:any;
   filterCategory: any;
-  categoryFilterSubject = new Subject();  
+  categoryFilterSubject = new Subject();
   priceFilter:any;
   priceFilterSubject = new Subject();
   discountFilter:any;
@@ -23,7 +23,8 @@ export class BooksService {
   constructor(public http:HttpClient) { }
 
   getAllBooks(){
-    return this.http.get(this.baseUrl).pipe(map((book:any)=>{
+    return this.http.get(this.baseUrl).pipe(map((book: any) => {
+      console.log(book);
       this.books = book;
       this.filteredBooks = this.books;
       return book;
